@@ -57,7 +57,7 @@
 				<form method="post" action="options.php">
 				<?php
 					// This prints out all hidden setting fields
-					settings_fields( 'damb_main_settings' );
+					settings_fields( 'damb_settings_group' );
 					do_settings_sections( 'damb_main_settings' );
 					submit_button();
 				?>
@@ -71,12 +71,13 @@
 		public function setup_init()
 		{ 	
 			register_setting(
-				'damb_main_settings', 		// Option group
-				'damb_on_off_check' 		// Option name
+				'damb_settings_group', 		// Option group
+				'damb_settings', 		// Option name
+				array( $this, 'sanitize_checkbox' )
 			);
 			
 			add_settings_section(
-				'damb_on_off_check', 					// ID
+				'damb_check_section', 					// ID
 				null, 									// Title
 				null, 									// Callback
 				'damb_main_settings' 					// Page
@@ -87,10 +88,18 @@
 				'Plugin Enabled?', 						 // Title 
 				array( $this, 'onoff_toggle_callback' ), // Callback
 				'damb_main_settings', 					 // Page
-				'damb_on_off_check' 					 // Section           
+				'damb_check_section' 					 // Section           
 			);      
 			
 		}
+		
+		    //checkbox sanitization function
+        function sanitize_checkbox( $input ){
+            //returns true if checkbox is checked
+            return ( isset( $input['damb_on_off_check'] ) ? "checky-check" : "jjjj" );
+        }
+		
+		
 		/** 
 		 * Get the settings option array and print one of its values
 		 */
@@ -98,7 +107,7 @@
 		{
 			$option = get_option( 'damb_on_off_check' );
 			printf(
-				'<input type="checkbox" id="damb_on_off_check" name="my_option_name[damb_on_off_check]" value="checky-check"' . 
+				'<input type="checkbox" id="damb_on_off_check" name="damb_settings[damb_on_off_check]" value="checky-check"' . 
 					checked( "checky-check", $option, false) . 
 				'/>'
 			);	

@@ -4,6 +4,7 @@
 	*
 	* @since 1.2.0
 	*/
+	defined( 'ABSPATH' ) || exit; // Prevent Direct Access
 
 	// This hook will create our admin menu in the side-panel
 	add_action('admin_menu', 'damb_add_pages');

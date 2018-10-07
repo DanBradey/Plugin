@@ -1,5 +1,12 @@
 <?php
    /**
+	* Plugin Name: DefineAwesome MindBody
+	*
+	* @since 1.2.0
+	*/
+	defined( 'ABSPATH' ) || exit; // Prevent Direct Access
+   
+   /**
 	* Class DASettingsPage
 	*
 	* This Class will hold the page variables, layout and callbacks form

@@ -4,6 +4,7 @@
 	*
 	* @since 1.2.0
 	*/
+	defined( 'ABSPATH' ) || exit; // Prevent Direct Access
 
 	// Hook for adding this shortcode
 	add_shortcode('awe1', 'showData');

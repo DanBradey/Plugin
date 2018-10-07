@@ -25,7 +25,6 @@
 	// TODO put this into it's own 'settings' file
 	require_once DAMB_PLUGIN_DIR . '/includes/admin/damindbody-menu.php';
 	require_once DAMB_PLUGIN_DIR . '/includes/admin/class-damindbody-settings.php';
-		require_once DAMB_PLUGIN_DIR . '/includes/admin/member-only.php';
 	require_once DAMB_PLUGIN_DIR . '/includes/damindbody-table.php';
 	require_once DAMB_PLUGIN_DIR . '/includes/damindbody-styles.php';
 ?>

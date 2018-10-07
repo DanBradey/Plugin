@@ -14,8 +14,8 @@
 	* @since 1.2.0
 	*/
 	function damb_add_pages() {
-		
-		add_menu_page('#DefineAwesome MindBody Plugin', 'DA MindBody', 'manage_options', 'damb_settings', 'damb_settings_page');
+
+		add_menu_page('#DefineAwesome MindBody Plugin', 'DA MindBody', 'manage_options', 'damb_main_settings', 'damb_settings_page' );
 	}
 
    /**
@@ -25,7 +25,7 @@
 	function damb_settings_page() {
 		
 		if( is_admin() ){
-			$my_settings_page = new DASettingsPage();
+			$test = new DASettingsPage();
 		}
 		else {
 			echo "<h2>" . __( 'You must be an Admin to make changes to this page', 'menu-test' ) . "</h2>";

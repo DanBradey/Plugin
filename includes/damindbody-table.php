@@ -8,7 +8,6 @@
 	// Hook for adding this shortcode
 	add_shortcode('awe1', 'showData');
 
-	
 	function getMockData($url)
 	{
 		$response = wp_remote_get($url)['body'];

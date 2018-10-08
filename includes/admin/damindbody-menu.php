@@ -11,6 +11,7 @@
 
    /**
 	* Action function for the admin menu hook
+	*
 	* @since 1.2.0
 	*/
 	function damb_add_pages() {
@@ -19,15 +20,13 @@
 	}
 
    /**
-	* This function dispays data on admin the menu page, using a DASettingsPage Class
+	* This function dispays a message on the admin page if the user has accessed it illegally
+	*
 	* @since 1.2.0
 	*/
 	function damb_settings_page() {
 		
-		if( is_admin() ){
-			$test = new DASettingsPage();
-		}
-		else {
+		if(! is_admin() ){
 			echo "<h2>" . __( 'You must be an Admin to make changes to this page', 'menu-test' ) . "</h2>";
 		}
 	}
